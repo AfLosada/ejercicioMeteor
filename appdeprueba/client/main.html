@@ -1,0 +1,31 @@
+<head>
+  <title>appdeprueba</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{> formulario}}
+  {{> profile}}
+</body>
+
+<template name="profile">
+  {{#each profilesCollection}}
+    <p> Name: {{name}}</p>
+      {{#if age}}
+        <p> Age: {{age}}</p>
+      {{/if}}
+  {{/each}}
+  {{passingData "primeraString" "segundaString"}}
+  <button>Random</button>
+  <h1>{{randomHelper}}</h1>
+</template>
+
+<template name ="formulario">
+    <form>
+        Name:<br>
+        <input type="text" name="name"><br>
+        Age:<br>
+        <input type="text" name="age">
+        <input type ="submit" value = "Submit">
+      </form> 
+</template>
